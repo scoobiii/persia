@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>🇺🇸🇮🇷 IRAN CONFLICT · US DEBT PROPHET · DOCUMENTOS OFICIAIS</title>
+    <title>🇺🇸🇮🇷 IRAN CONFLICT · US DEBT PROPHET · REPARAÇÕES $487B · DOCUMENTOS OFICIAIS</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,800&family=JetBrains+Mono:wght@400;600;700&family=Times+New+Roman&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
@@ -17,7 +18,7 @@
         }
         .container { max-width: 1400px; margin: 0 auto; }
         
-        /* Navegação entre seções */
+        /* Navegação */
         .nav-tabs {
             display: flex;
             gap: 8px;
@@ -67,13 +68,13 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Estilos do Dashboard (mesmos do anterior) */
+        /* Dashboard Styles */
         .war-header {
             background: linear-gradient(135deg, #0a0a15 0%, #1a0a0a 100%);
             border-radius: 28px;
             padding: 28px 32px;
             margin-bottom: 24px;
-            border-left: 6px solid #dc2626;
+            border-left: 6px solid #10b981;
             position: relative;
             overflow: hidden;
         }
@@ -85,14 +86,19 @@
             background-clip: text;
             color: transparent;
         }
-        .scenario-badge {
+        .reparation-badge {
             display: inline-block;
-            background: rgba(220,38,38,0.2);
-            border: 1px solid #dc2626;
+            background: rgba(16,185,129,0.2);
+            border: 1px solid #10b981;
             border-radius: 40px;
-            padding: 6px 16px;
-            font-size: 0.7rem;
+            padding: 8px 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
             margin-top: 12px;
+        }
+        .reparation-badge span {
+            color: #10b981;
+            font-size: 1.2rem;
         }
         .prophet-container {
             background: #0c0c14;
@@ -132,7 +138,7 @@
             border-color: #f97316;
         }
         .active-scenario {
-            background: #dc2626;
+            background: #10b981;
             border-color: #facc15;
         }
         .stats-grid {
@@ -149,6 +155,7 @@
         }
         .stat-label { font-size: 0.65rem; text-transform: uppercase; color: #8b9dc3; }
         .stat-number { font-family: monospace; font-size: 1.3rem; font-weight: 700; margin: 6px 0; }
+        .stat-number.green { color: #10b981; }
         .probability-bar { height: 8px; background: #1e1e2a; border-radius: 4px; overflow: hidden; margin: 12px 0; }
         .prob-fill { height: 100%; background: linear-gradient(90deg, #10b981, #facc15, #ef4444); transition: width 0.5s; }
         .verdict {
@@ -160,7 +167,7 @@
             text-align: center;
         }
         
-        /* Estilos dos Documentos Oficiais */
+        /* Documentos Oficiais */
         .docs-grid {
             display: flex;
             flex-direction: column;
@@ -209,6 +216,14 @@
             border-bottom: 1px solid #ccc;
             padding-bottom: 8px;
             margin-bottom: 20px;
+        }
+        .highlight-amount {
+            background: #e8f5e9;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #2e7d32;
+            font-family: monospace;
         }
         .signature-block {
             margin-top: 40px;
@@ -272,75 +287,84 @@
     <!-- Navegação -->
     <div class="nav-tabs">
         <button class="nav-btn active" data-section="dashboard">📊 DASHBOARD · PROPHET TIMELINE</button>
-        <button class="nav-btn" data-section="documents">📜 DOCUMENTOS OFICIAIS · CONGRESSO</button>
+        <button class="nav-btn" data-section="documents">📜 DOCUMENTOS OFICIAIS · REPARAÇÕES $487B</button>
         <button class="nav-btn" onclick="window.print()">🖨️ IMPRIMIR DOCUMENTOS</button>
     </div>
 
     <!-- SEÇÃO 1: DASHBOARD -->
     <div id="dashboard-section" class="section active-section">
-        <!-- Header -->
+        <!-- Header com valor de reparação destacado -->
         <div class="war-header">
             <div class="title">🇮🇷🇺🇸 IRAN CONFLICT · US DEBT PROPHET TIMELINE</div>
-            <div class="scenario-badge">🛢️ OIL SHOCK · CONGRESS CUTS WAR FUNDS · REPARATIONS TO IRAN · US BALANCES BUT DOES NOT BREAK</div>
-            <div style="margin-top: 16px; font-size: 0.75rem; color: #facc15;">📅 PROJEÇÃO ESTILO PROPHET · 3 CENÁRIOS · DADOS REAIS TREASURY</div>
+            <div class="reparation-badge">
+                💰 REPARAÇÕES AO IRÃ: <span>$487 BILHÕES</span> · 10 ANOS · TOTALMENTE COMPENSADO
+            </div>
+            <div style="margin-top: 16px; font-size: 0.75rem; color: #10b981;">✅ ACORDO APROVADO PELO CONGRESSO (MAIORIA REPUBLICANA) · EUA BALANÇAM MAS NÃO QUEBRAM</div>
         </div>
 
         <!-- Prophet Container -->
         <div class="prophet-container">
             <div class="timeline-controls">
-                <button id="scenarioWarBtn" class="active-scenario">⚔️ CENÁRIO BASE: CONFLITO IRAN (GUERRA)</button>
-                <button id="scenarioCutBtn">✂️ CONGRESSO CORTA VERBA · FORÇA ACORDO</button>
-                <button id="scenarioRepBtn">🤝 REPARAÇÕES AO IRÃ · US BALANCEIA</button>
+                <button id="scenarioWarBtn">⚔️ CENÁRIO: GUERRA PROLONGADA</button>
+                <button id="scenarioCutBtn">✂️ CENÁRIO: CONGRESSO CORTA VERBA</button>
+                <button id="scenarioRepBtn" class="active-scenario">🤝 CENÁRIO APROVADO: REPARAÇÕES $487B</button>
                 <button id="resetSimBtn">↺ RESETAR DADOS REAIS</button>
             </div>
             <canvas id="prophetChart" style="width:100%; height:400px;"></canvas>
             <div style="display: flex; gap: 16px; justify-content: center; margin-top: 20px; flex-wrap: wrap;">
                 <div class="event-marker" style="border-left: 3px solid #f97316;">🔴 MAR 2026 · Início conflito Irã · Oil +150%</div>
                 <div class="event-marker" style="border-left: 3px solid #3b82f6;">🔵 JUN 2026 · Congresso corta verba de guerra</div>
-                <div class="event-marker" style="border-left: 3px solid #10b981;">🟢 SET 2026 · Acordo + Reparações $500B ao Irã</div>
+                <div class="event-marker" style="border-left: 3px solid #10b981;">🟢 SET 2026 · Acordo + Reparações $487B ao Irã</div>
             </div>
         </div>
 
-        <!-- Métricas -->
+        <!-- Métricas com valor de reparação -->
         <div class="stats-grid">
             <div class="stat-card"><div class="stat-label">🇺🇸 DÍVIDA PICO PROJETADO</div><div class="stat-number" id="peakDebt">$42.8T</div><div class="stat-label">em Dez 2026</div></div>
-            <div class="stat-card"><div class="stat-label">🛢️ PREÇO DO PETRÓLEO (WTI)</div><div class="stat-number" id="oilPrice">$145</div><div class="stat-label">pico durante conflito</div></div>
-            <div class="stat-card"><div class="stat-label">💰 REPARAÇÕES AO IRÃ</div><div class="stat-number" id="reparationsAmt">$0</div><div class="stat-label">acordo de paz</div></div>
+            <div class="stat-card"><div class="stat-label">🛢️ PREÇO DO PETRÓLEO (WTI)</div><div class="stat-number" id="oilPrice">$89</div><div class="stat-label">pós-acordo</div></div>
+            <div class="stat-card"><div class="stat-label">💰 REPARAÇÕES AO IRÃ</div><div class="stat-number green" id="reparationsAmt">$487B</div><div class="stat-label">10 parcelas anuais de $48.7B</div></div>
             <div class="stat-card"><div class="stat-label">📉 DÉFICIT ANUAL (2026)</div><div class="stat-number" id="deficit">$2.4T</div><div class="stat-label">pós-corte de gastos</div></div>
             <div class="stat-card"><div class="stat-label">⚖️ RISCO DE INSOLVÊNCIA</div><div class="stat-number" id="insolvencyRisk">32%</div><div class="probability-bar"><div class="prob-fill" id="riskFill" style="width:32%"></div></div></div>
-            <div class="stat-card"><div class="stat-label">🏛️ APOIO POPULAR AO ACORDO</div><div class="stat-number" id="publicSupport">68%</div></div>
+            <div class="stat-card"><div class="stat-label">🏛️ APOIO POPULAR AO ACORDO</div><div class="stat-number" id="publicSupport">68%</div><div class="stat-label">maioria republicana + democratas</div></div>
         </div>
 
-        <!-- Verdict -->
+        <!-- Verdict atualizado -->
         <div class="verdict" id="verdictBox">
-            <strong style="color:#facc15;">⚖️ VEREDICT: EUA BALANÇAM MAS NÃO QUEBRAM</strong><br>
-            O conflito com o Irã elevou a dívida para $42.8T, mas o corte de verbas do Congresso e o acordo de reparações estabilizaram a trajetória.<br>
-            Dívida/PIB atinge pico de 138% em 2027, recua para 122% até 2030. EUA mantêm capacidade de pagamento.
+            <strong style="color:#10b981;">✅ VEREDICT: EUA BALANÇAM MAS NÃO QUEBRAM · REPARAÇÕES $487B APROVADAS</strong><br>
+            • Conflito com Irã encerrado em setembro 2026 · Reparações de $487 bilhões em 10 anos<br>
+            • Totalmente compensado por cortes em gastos de guerra ($187B) + venda de reserva estratégica ($150B) + revisão de contratos de defesa ($150B)<br>
+            • Dívida/PIB atinge pico de 138% em 2027, recua para 122% até 2030<br>
+            • Juros anuais adicionais: $7.2B · Economia com fim da guerra: $1.3T<br>
+            <strong style="color:#10b981;">➜ OS ESTADOS UNIDOS BALANÇAM, MAS NÃO QUEBRAM</strong>
         </div>
     </div>
 
-    <!-- SEÇÃO 2: DOCUMENTOS OFICIAIS -->
+    <!-- SEÇÃO 2: DOCUMENTOS OFICIAIS ATUALIZADOS COM $487B -->
     <div id="documents-section" class="section">
         <div class="war-header" style="border-left-color: #10b981; margin-bottom: 24px;">
-            <div class="title">📜 DOCUMENTOS OFICIAIS · US CONGRESS · IRAN REPARATIONS ACT</div>
-            <div class="scenario-badge" style="border-color:#10b981;">✅ APROVADO POR MAIORIA REPUBLICANA · ARQUIVADO NO NATIONAL ARCHIVES</div>
+            <div class="title">📜 DOCUMENTOS OFICIAIS · US CONGRESS · IRAN REPARATIONS ACT OF 2026</div>
+            <div class="reparation-badge" style="background: rgba(16,185,129,0.2);">✅ REPARAÇÕES: $487 BILHÕES · APROVADO POR MAIORIA REPUBLICANA · ARQUIVADO NO NATIONAL ARCHIVES</div>
         </div>
         
         <div class="docs-grid">
-            <!-- DOC 1: HOUSE RESOLUTION -->
+            <!-- DOC 1: HOUSE RESOLUTION COM VALOR DEFINIDO -->
             <div class="official-doc">
                 <div class="letterhead"><div class="seal">🇺🇸</div><div class="house-name">U.S. HOUSE OF REPRESENTATIVES</div><div class="subtitle" style="font-size:0.7rem;">118th CONGRESS · 2nd SESSION</div></div>
                 <div class="doc-content">
-                    <div class="doc-number">H.R. 8842 · Iran War Powers and Fiscal Responsibility Act</div>
-                    <h3 style="font-size:1rem;">AN ACT</h3>
-                    <p>To prohibit further unauthorized military engagement against the Islamic Republic of Iran, to terminate the 2026 supplemental war appropriation, and to establish a framework for diplomatic resolution including reparations.</p>
-                    <p style="margin-top:12px;"><strong>SEC. 4. REPARATIONS FRAMEWORK.</strong> Compensation to Iran for verified civilian infrastructure damages, not to exceed $500 billion, payable in tranches over 10 years.</p>
+                    <div class="doc-number">H.R. 8842 · Iran War Powers and Fiscal Responsibility Act (AS AMENDED)</div>
+                    <h3 style="font-size:1rem;">SECTION 4. REPARATIONS FRAMEWORK.</h3>
+                    <p>(a) The Secretary of State shall negotiate a comprehensive agreement with the Islamic Republic of Iran that includes compensation for damages incurred between March 15, 2026 and the date of cessation of hostilities.</p>
+                    <p>(b) <strong>COMPENSATION AMOUNT.</strong> The United States shall pay to the Islamic Republic of Iran the sum of <span class="highlight-amount">$487,000,000,000</span> (four hundred eighty-seven billion dollars), representing:</p>
+                    <p style="margin-left: 20px;">(1) $210,000,000,000 for verified civilian infrastructure damages;<br>
+                    (2) $145,000,000,000 for lost petroleum revenues during the conflict period;<br>
+                    (3) $132,000,000,000 for reconstruction assistance and civilian resettlement costs.</p>
+                    <p>(c) Payments shall be structured in ten (10) equal annual installments of <strong>$48,700,000,000</strong>, beginning fiscal year 2027, subject to verification of continued ceasefire and diplomatic normalization.</p>
                     <div class="signature-block">
-                        <div class="signature"><div class="sign-line"></div>MIKE JOHNSON<div class="title">Speaker of the House</div><div class="stamp">✓ APPROVED · APR 12 2026</div></div>
+                        <div class="signature"><div class="sign-line"></div>MIKE JOHNSON<div class="title">Speaker of the House</div><div class="stamp">✓ APPROVED · APR 14 2026</div></div>
                         <div class="signature"><div class="sign-line"></div>STEVE SCALISE<div class="title">Majority Leader</div></div>
                         <div class="signature"><div class="sign-line"></div>TOM EMMER<div class="title">Majority Whip</div></div>
                     </div>
-                    <div class="footer-note">Passed the House: 224–211 · April 10, 2026</div>
+                    <div class="footer-note">Passed the House: 224–211 · April 12, 2026 · Roll Call Vote 8842-2</div>
                 </div>
             </div>
 
@@ -349,13 +373,14 @@
                 <div class="letterhead"><div class="seal">⚖️</div><div class="house-name">UNITED STATES SENATE</div></div>
                 <div class="doc-content">
                     <div class="doc-number">S. 3372 · Iran Diplomatic Resolution and Reparations Authorization</div>
-                    <p><strong>SECTION 1.</strong> The President is authorized to pursue diplomatic framework including reparations to Iran not exceeding $500 billion, contingent upon verifiable cessation of hostilities.</p>
+                    <p><strong>SECTION 1.</strong> The President is authorized to pursue the diplomatic framework outlined in H.R. 8842, including reparations to Iran in the amount of <span class="highlight-amount">$487,000,000,000</span>, contingent upon verifiable cessation of hostilities and verification of damage assessments conducted by the Swiss Embassy in Tehran.</p>
+                    <p><strong>SEC. 2. FUNDING MECHANISM.</strong> Reparations shall be funded through: (a) $187B from rescinded war appropriations; (b) $150B from Strategic Petroleum Reserve monetization (2027-2031); (c) $150B from revised defense procurement schedules.</p>
                     <div class="signature-block">
                         <div class="signature"><div class="sign-line"></div>JOHN THUNE<div class="title">Senate Majority Leader</div></div>
                         <div class="signature"><div class="sign-line"></div>JOHN BARRASSO<div class="title">Republican Conference Chair</div></div>
                         <div class="signature"><div class="sign-line"></div>CHUCK GRASSLEY<div class="title">President Pro Tempore</div></div>
                     </div>
-                    <div class="footer-note">Passed Senate April 8, 2026 · Amended and agreed April 11, 2026</div>
+                    <div class="footer-note">Passed Senate April 10, 2026 · Amended and agreed April 13, 2026</div>
                 </div>
             </div>
 
@@ -363,27 +388,36 @@
             <div class="official-doc">
                 <div class="letterhead"><div class="seal">🏛️</div><div class="house-name">THE WHITE HOUSE</div><div class="subtitle">WASHINGTON</div></div>
                 <div class="doc-content">
-                    <div class="doc-number">EXECUTIVE ORDER 2026-04 · IMPLEMENTATION OF IRAN PEACE ACT</div>
-                    <p>By authority vested in me as President, the United States shall transition from active hostilities to diplomatic engagement within 30 days. Reparations payments shall be disbursed over 10 years. The Strategic Petroleum Reserve shall release up to 180 million barrels to stabilize prices.</p>
+                    <div class="doc-number">EXECUTIVE ORDER 2026-04 · IMPLEMENTATION OF IRAN PEACE AND REPARATIONS ACT</div>
+                    <p>By authority vested in me as President by the Constitution and the laws of the United States, including the Iran War Termination and Fiscal Responsibility Act of 2026 (H.R. 8842), it is hereby ordered:</p>
+                    <p><strong>Section 1.</strong> The United States shall pay to the Islamic Republic of Iran the sum of <span class="highlight-amount">$487,000,000,000</span> in ten annual installments, with the first payment due upon full implementation of this Order.</p>
+                    <p><strong>Section 2.</strong> The Strategic Petroleum Reserve shall release up to 180 million barrels over 60 months to offset the fiscal impact of reparations and stabilize global oil prices.</p>
                     <div class="signature-block">
                         <div class="signature"><div class="sign-line" style="width:250px;"></div>DONALD J. TRUMP<div class="title">President of the United States</div><div class="stamp">★ EXECUTED · APR 15 2026</div></div>
                         <div class="signature"><div class="sign-line"></div>MARCO RUBIO<div class="title">Secretary of State</div></div>
                     </div>
-                    <div class="footer-note">Filed with Office of the Federal Register · April 15, 2026</div>
+                    <div class="footer-note">Filed with Office of the Federal Register · April 15, 2026 · 11:47 AM EST</div>
                 </div>
             </div>
 
-            <!-- DOC 4: TREASURY MEMORANDUM -->
+            <!-- DOC 4: TREASURY MEMORANDUM COM CERTIFICAÇÃO -->
             <div class="official-doc">
                 <div class="letterhead"><div class="seal">💵</div><div class="house-name">DEPARTMENT OF THE TREASURY</div><div class="subtitle">OFFICE OF DEBT MANAGEMENT</div></div>
                 <div class="doc-content">
-                    <div class="doc-number">MEMORANDUM · FISCAL IMPACT OF IRAN PEACE AGREEMENT</div>
-                    <p><strong>Findings:</strong> Continued conflict would add $1.8T to debt by 2028. Enacted scenario saves $1.2T in war costs. Reparations of $487B represent net fiscal benefit of $713B. Debt-to-GDP peaks at 138% in 2027, declines to 122% by 2030.</p>
+                    <div class="doc-number">CERTIFICATION MEMORANDUM · REPARATIONS AMOUNT $487B</div>
+                    <p><strong>SUBJECT:</strong> Fiscal Impact Analysis and Certification of Reparations Amount — $487,000,000,000</p>
+                    <p><strong>Findings:</strong><br>
+                    • Continued conflict would add $1.8 trillion to national debt by 2028.<br>
+                    • Enacted scenario with reparations saves $1.3 trillion in projected war costs.<br>
+                    • Reparations of $487 billion are <strong>fully offset</strong> by identified funding sources.<br>
+                    • Debt-to-GDP peaks at 138% in Q3 2027, declines to 122% by 2030.<br>
+                    • Interest payments increase by $7.2 billion annually — offset by war termination savings.</p>
+                    <p><strong>Conclusion:</strong> The United States maintains full faith and credit. The fiscal position stabilizes post-agreement.</p>
                     <div class="signature-block">
                         <div class="signature"><div class="sign-line"></div>SCOTT BESSENT<div class="title">Secretary of the Treasury</div></div>
-                        <div class="signature"><div class="sign-line"></div>MICHAEL FAULKENDER<div class="title">Under Secretary</div></div>
+                        <div class="signature"><div class="sign-line"></div>MICHAEL FAULKENDER<div class="title">Under Secretary, Domestic Finance</div></div>
                     </div>
-                    <div class="footer-note">Released April 16, 2026 · Public record</div>
+                    <div class="footer-note">Certified April 16, 2026 · Fiscal Responsibility and Accountability Office</div>
                 </div>
             </div>
 
@@ -392,20 +426,23 @@
                 <div class="letterhead"><div class="seal">📜</div><div class="house-name">NATIONAL ARCHIVES AND RECORDS ADMINISTRATION</div></div>
                 <div class="doc-content">
                     <div class="doc-number">CERTIFICATE OF AUTHENTICITY · 2026-0420-01</div>
-                    <p style="text-align:center;">This certifies that the attached documents constitute true and accurate copies of Public Law 118-147. Digital signatures verified.</p>
+                    <p style="text-align:center;">This certifies that the attached documents constitute true and accurate copies of Public Law 118-147 — <strong>Iran War Termination and Reparations Act of 2026</strong>.</p>
+                    <p style="text-align:center;">Reparations amount: <span class="highlight-amount">$487,000,000,000</span> (four hundred eighty-seven billion dollars). Digital signatures verified through the Federal Register system.</p>
                     <div style="text-align:center;"><div class="stamp" style="transform:rotate(0);">✓ CERTIFIED TRUE COPY ✓</div></div>
                     <div class="signature-block">
                         <div class="signature"><div class="sign-line"></div>COLLEEN SHOGAN<div class="title">Archivist of the United States</div></div>
+                        <div class="signature"><div class="sign-line"></div>JENNIFER PAULETTE<div class="title">Director, Federal Register</div></div>
                     </div>
-                    <div class="footer-note">Washington, DC · April 20, 2026</div>
+                    <div class="footer-note">Washington, DC · April 20, 2026 · Record Group 287</div>
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-        📊 Dados: US Treasury · FRED · Modelo Prophet-style · Cenários baseados em eventos geopolíticos reais.<br>
-        📜 Documentos oficiais assinados por lideranças republicanas · Arquivo Nacional · Public Law 118-147
+        📊 Dados: US Treasury · FRED · Modelo Prophet-style · Reparações $487B totalmente compensadas por cortes orçamentários<br>
+        📜 Documentos oficiais assinados por lideranças republicanas · Arquivo Nacional · Public Law 118-147 · Promulgado em 15 de abril de 2026<br>
+        🇺🇸🇮🇷 "Os Estados Unidos balançam, mas não quebram" — Certificação do Tesouro, 16 de abril de 2026
     </footer>
 </div>
 
@@ -416,9 +453,18 @@
     let currentScenario = 'reparations';
 
     const scenarios = {
-        war: { name: 'Conflito Irã', oilPrice: 145, peakDebt: 45.2, deficit2026: 3.2, reparations: 0, insolvencyRisk: 58, publicSupport: 32, verdict: '⚠️ ALERTA: Dívida 148% do PIB · Risco de rebaixamento' },
-        cut: { name: 'Congresso corta verba', oilPrice: 112, peakDebt: 41.5, deficit2026: 2.1, reparations: 0, insolvencyRisk: 41, publicSupport: 54, verdict: '⚖️ Congresso força retirada · Dívida estabiliza em 132%' },
-        reparations: { name: 'Acordo + Reparações', oilPrice: 89, peakDebt: 42.8, deficit2026: 2.4, reparations: 500, insolvencyRisk: 32, publicSupport: 68, verdict: '✅ EUA BALANÇAM MAS NÃO QUEBRAM · Dívida/PIB pico 138% → recua para 122%' }
+        war: { 
+            name: 'Guerra Prolongada', oilPrice: 145, peakDebt: 45.2, deficit2026: 3.2, reparations: 0, insolvencyRisk: 58, publicSupport: 28, 
+            verdict: '⚠️ ALERTA CRÍTICO: Dívida 148% do PIB · Risco de rebaixamento de rating · Sem acordo' 
+        },
+        cut: { 
+            name: 'Congresso Corta Verba', oilPrice: 112, peakDebt: 41.5, deficit2026: 2.1, reparations: 0, insolvencyRisk: 41, publicSupport: 52, 
+            verdict: '⚖️ Congresso força retirada unilateral · Dívida estabiliza em 132% · Sem compensação ao Irã' 
+        },
+        reparations: { 
+            name: 'Acordo + Reparações $487B', oilPrice: 89, peakDebt: 42.8, deficit2026: 2.4, reparations: 487, insolvencyRisk: 32, publicSupport: 68, 
+            verdict: '✅ EUA BALANÇAM MAS NÃO QUEBRAM · Reparações $487B em 10 anos · Totalmente compensado · Dívida/PIB pico 138% → recua para 122%' 
+        }
     };
 
     async function fetchRealHistory() {
@@ -456,7 +502,7 @@
             
             if (dateStr >= '2026-03-15' && scenarioKey === 'war') monthlyGrowth += 0.018;
             if (dateStr >= '2026-06-01' && scenarioKey === 'cut') monthlyGrowth -= 0.012;
-            if (dateStr >= '2026-09-15' && scenarioKey === 'reparations') monthlyGrowth += 0.014;
+            if (dateStr >= '2026-09-15' && scenarioKey === 'reparations') monthlyGrowth += 0.008;
             if (dateStr >= '2026-10-01') monthlyGrowth = Math.max(0.004, monthlyGrowth * 0.7);
             
             currentDebt = currentDebt * (1 + monthlyGrowth);
@@ -479,7 +525,7 @@
         document.getElementById('insolvencyRisk').innerHTML = s.insolvencyRisk + '%';
         document.getElementById('riskFill').style.width = s.insolvencyRisk + '%';
         document.getElementById('publicSupport').innerHTML = s.publicSupport + '%';
-        document.getElementById('verdictBox').innerHTML = `<strong style="color:#facc15;">⚖️ VEREDICT: ${s.name}</strong><br>${s.verdict}`;
+        document.getElementById('verdictBox').innerHTML = `<strong style="color:${scenarioKey === 'reparations' ? '#10b981' : '#facc15'};">⚖️ VEREDICT: ${s.name}</strong><br>${s.verdict}`;
         
         const header = document.querySelector('.war-header');
         if (scenarioKey === 'reparations') header.style.borderLeftColor = '#10b981';
@@ -500,7 +546,7 @@
             data: {
                 labels: labels,
                 datasets: [
-                    { label: 'Dívida Real (Histórica)', data: debts.map((d,i) => i < historicalDebt.length ? d : null), borderColor: '#facc15', borderWidth: 2.5, pointRadius: 0, tension: 0.2 },
+                    { label: 'Dívida Real (Histórica Treasury)', data: debts.map((d,i) => i < historicalDebt.length ? d : null), borderColor: '#facc15', borderWidth: 2.5, pointRadius: 0, tension: 0.2 },
                     { label: `Projeção: ${scenarios[scenarioKey].name}`, data: debts.map((d,i) => i >= historicalDebt.length-1 ? d : null), borderColor: scenarioKey === 'reparations' ? '#10b981' : (scenarioKey === 'cut' ? '#3b82f6' : '#ef4444'), borderWidth: 3, borderDash: [8,4], pointRadius: 0, fill: true, tension: 0.3 }
                 ]
             },
@@ -524,17 +570,18 @@
 
     // Navegação entre seções
     document.querySelectorAll('.nav-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const section = btn.getAttribute('data-section');
-            if (!section) return;
-            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active-section'));
-            document.getElementById(`${section}-section`).classList.add('active-section');
-            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-        });
+        const section = btn.getAttribute('data-section');
+        if (section) {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active-section'));
+                document.getElementById(`${section}-section`).classList.add('active-section');
+                document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        }
     });
 
-    // Eventos dos botões
+    // Eventos dos botões do dashboard
     document.getElementById('scenarioWarBtn').onclick = () => setScenario('war');
     document.getElementById('scenarioCutBtn').onclick = () => setScenario('cut');
     document.getElementById('scenarioRepBtn').onclick = () => setScenario('reparations');
